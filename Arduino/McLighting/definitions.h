@@ -1,6 +1,8 @@
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
 
+#include <Arduino.h>
+
 #define USE_WS2812FX_DMA 0      // 0 = Used PIN is ignored & set to RX/GPIO3; 1 = Used PIN is ignored & set to TX/GPIO1; 2 = Used PIN is ignored & set to D4/GPIO2;  Uses WS2812FX, see: https://github.com/kitesurfer1404/WS2812FX
                                 // or comment it out
 #if defined(USE_WS2812FX_DMA)
@@ -72,9 +74,9 @@ uint8_t  prevsegment        = 0;
 #define WIFIMGR_SET_MANUAL_IP
 
 #if defined(WIFIMGR_SET_MANUAL_IP)
-  uint8_t _ip[4] = {192,168,178,254};   //IP Adress
-  uint8_t _gw[4] = {192,168,178,1};     //Gateway
-  uint8_t _sn[4] = {255,255,255,0};     //Subnetmask
+  uint8_t _ip[4] = {172,16,6,1};   //IP Adress
+  uint8_t _gw[4] = {172,16,0,1};     //Gateway
+  uint8_t _sn[4] = {255,255,0,0};     //Subnetmask
 #endif
 
 #if defined(MQTT_HOMEASSISTANT_SUPPORT)

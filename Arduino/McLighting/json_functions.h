@@ -1,5 +1,10 @@
 #include <ArduinoJson.h>         //https://github.com/bblanchon/ArduinoJson
 
+#include<Arduino.h>
+#include "definitions.h"
+
+extern ESP8266WebServer server;
+
 #if defined(ARDUINOJSON_VERSION)
   #if !(ARDUINOJSON_VERSION_MAJOR == 6 and ARDUINOJSON_VERSION_MINOR >= 8)
     #error "Install ArduinoJson v6.8.x or higher"
